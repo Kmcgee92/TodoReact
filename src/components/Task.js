@@ -2,14 +2,16 @@
 
 import React from 'react';
 
-const Task = () => {
-    const handleClick = () => {
+const Task = ({deleteTask, task: { id, message } }) => {
+    const handleClick = (e) => {
+        // console.log(e.target)
         // TODO: Delete task
+        deleteTask(id);
     }
 
     return (
         <li>
-        <h1>Hi, I'm a task in your to-do list!</h1>
+        <h1>{message}</h1>
         <button onClick={handleClick}>Delete Task</button>
         </li>
     );
